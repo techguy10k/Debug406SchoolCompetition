@@ -1,0 +1,14 @@
+
+*.d
+*.o
+*.crf
+*.hex
+*.htm
+*.axf
+*.map
+*.lnp
+*.sct
+*.dep
+*.lst
+\Drivers\
+/Drivers/
