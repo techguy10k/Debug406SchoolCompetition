@@ -1,7 +1,7 @@
 [PreviousGenFiles]
-HeaderPath=F:/2019 ds/Debug406SchoolCompetition/School2019/Inc
+HeaderPath=D:/develop/MCU/STM32/Debug406SchoolCompetition/School2019/Inc
 HeaderFiles=gpio.h;dac.h;dma.h;tim.h;stm32f4xx_it.h;stm32f4xx_hal_conf.h;main.h;spi.h;
-SourcePath=F:/2019 ds/Debug406SchoolCompetition/School2019/Src
+SourcePath=D:/develop/MCU/STM32/Debug406SchoolCompetition/School2019/Src
 SourceFiles=gpio.c;dac.c;dma.c;tim.c;stm32f4xx_it.c;stm32f4xx_hal_msp.c;main.c;spi.c;
 
 [PreviousLibFiles]
