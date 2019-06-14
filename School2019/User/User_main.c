@@ -1,10 +1,14 @@
-#include "User_main.h"
+#include "main.h"
+#include "spi.h"
+#include "tim.h"
+#include "gpio.h"
+#include "User_lcd.h"
 
 
 //此处为真正的mian函数 自动生成部分请不要动
 void User_main(void)
-{
-	
+{	
+
 }
 
 

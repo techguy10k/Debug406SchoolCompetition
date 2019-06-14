@@ -20,10 +20,10 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "dac.h"
-#include "dma.h"
+#include "spi.h"
 #include "tim.h"
 #include "gpio.h"
+#include "User_lcd.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -92,19 +92,21 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_DMA_Init();
-  MX_DAC_Init();
-  MX_TIM6_Init();
-  MX_TIM7_Init();
+  //MX_TIM6_Init();
+  //MX_TIM7_Init();
+  MX_SPI1_Init();
+	
+	Lcd_Init();
+	Lcd_Clear(WHITE);
   /* USER CODE BEGIN 2 */
-
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-		User_main();
+		Lcd_Clear(RED);
+		//User_main();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
