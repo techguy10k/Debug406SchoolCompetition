@@ -25,7 +25,8 @@ void User_main(void)
 	HAL_Delay(500);
 	while(1)
 	{
-		LCD_OUTPUT_Wave();
+		LCD_OUTPUT_FFT();
+		LCD_OUTPUT_Float(0,0,"HELLO",i);
 	}
 	
 }

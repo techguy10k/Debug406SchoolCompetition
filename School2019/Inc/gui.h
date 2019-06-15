@@ -18,6 +18,7 @@ void Gui_DrawFont_GBK24(uint16_t x, uint16_t y, uint16_t fc, uint16_t bc, uint8_
 void Gui_DrawFont_Num32(uint16_t x, uint16_t y, uint16_t fc, uint16_t bc, uint16_t num);	 
 void LCD_OUTPUT_Float(uint16_t LineX, uint16_t LineY, char *string,float32_t string_to_display);
 void LCD_OUTPUT_Wave(void);
+void LCD_OUTPUT_FFT(void);
 #ifdef __cplusplus
 }
 #endif
