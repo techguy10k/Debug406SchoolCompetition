@@ -23,7 +23,7 @@
 #include "spi.h"
 #include "tim.h"
 #include "gpio.h"
-
+#include "gui.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 /* USER CODE END Includes */
@@ -71,7 +71,7 @@ int main(void)
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
-  
+  int a=1;
 
   /* MCU Configuration--------------------------------------------------------*/
 
@@ -103,15 +103,12 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-Lcd_Clear(RED);
     /* USER CODE END WHILE */
-
     /* USER CODE BEGIN 3 */
 		//LCD_Demo();
 		//printf("Hello LCD \r\n");
 		//HAL_Delay(1000);
-		 
-//		FFT_PROCESSING_F32Process(4096);
+		 LCD_OUTPUT_Float(0,0,"Hello World!",a);
   }
   /* USER CODE END 3 */
 }
