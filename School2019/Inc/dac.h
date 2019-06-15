@@ -1,8 +1,8 @@
 /**
   ******************************************************************************
-  * File Name          : TIM.h
+  * File Name          : DAC.h
   * Description        : This file provides code for the configuration
-  *                      of the TIM instances.
+  *                      of the DAC instances.
   ******************************************************************************
   * @attention
   *
@@ -17,8 +17,8 @@
   ******************************************************************************
   */
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __tim_H
-#define __tim_H
+#ifndef __dac_H
+#define __dac_H
 #ifdef __cplusplus
  extern "C" {
 #endif
@@ -30,15 +30,13 @@
 
 /* USER CODE END Includes */
 
-extern TIM_HandleTypeDef htim3;
-extern TIM_HandleTypeDef htim6;
+extern DAC_HandleTypeDef hdac;
 
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
 
-void MX_TIM3_Init(void);
-void MX_TIM6_Init(void);
+void MX_DAC_Init(void);
 
 /* USER CODE BEGIN Prototypes */
 
@@ -47,7 +45,7 @@ void MX_TIM6_Init(void);
 #ifdef __cplusplus
 }
 #endif
-#endif /*__ tim_H */
+#endif /*__ dac_H */
 
 /**
   * @}
