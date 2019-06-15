@@ -33,7 +33,8 @@ void User_FastRfft2048BlokingMode(float32_t* MagOutPosition)
 	//FFT运算函数 最后的 0 代表是正fft
 	arm_rfft_fast_f32(&S,realval,fftoutput,0);
 	//求模长
-	arm_cmplx_mag_f32(fftoutput,MagOutPosition,2048);
+	arm_cmplx_mag_f32(fftoutput,MagOutPosition,1024);
+	
 	
 }
 

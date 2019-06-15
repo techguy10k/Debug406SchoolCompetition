@@ -12,7 +12,7 @@
 //TIM3 触发输出事件连接到ADC1 PA1端口控制采样速率 ADC1 PA1使用DMA2S0
 
 /* Test Only */
-
+float32_t aaa[2048];
 
 void Systeminit(void); //初始化都放这里
 
