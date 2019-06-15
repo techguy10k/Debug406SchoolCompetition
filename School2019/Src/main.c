@@ -26,7 +26,7 @@
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
-#include "gui.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "User_main.h"
@@ -110,11 +110,8 @@ int main(void)
   {
 		User_main();
     /* USER CODE END WHILE */
+
     /* USER CODE BEGIN 3 */
-		//LCD_Demo();
-		//printf("Hello LCD \r\n");
-		//HAL_Delay(1000);
-		 
   }
   /* USER CODE END 3 */
 }

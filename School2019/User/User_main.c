@@ -5,6 +5,8 @@
 
 #include "User_adc.h"
 #include "User_Uart.h"
+#include "User_FFT.h"
+#include "gui.h"
 
 
 //TIM3 触发输出事件连接到ADC1 PA1端口控制采样速率 ADC1 PA1使用DMA2S0
