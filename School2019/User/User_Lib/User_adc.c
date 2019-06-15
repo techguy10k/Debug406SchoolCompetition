@@ -26,6 +26,7 @@ void User_AdcStartBlokingMode(uint16_t* ArrayAddress,
 	HAL_ADC_Start_DMA(&hadc1,(uint32_t*)ArrayAddress,Lenth);
 	HAL_Delay(1010);
 	ADC_CompleteFlag = 0;
+	User_AdcStop();
 }
 
 void User_AdcStop(void)

@@ -1,11 +1,14 @@
 #include "spi.h"
 #include "gui.h"
 #include "font.h"
+#include "User_adc.h"
 #include <stdio.h>
 //从ILI93xx读出的数据为GBR格式，而我们写入的时候为RGB格式。
 //通过该函数转换
 //c:GBR格式的颜色值
 //返回值：RGB格式的颜色值
+uint16_t Adc_table[2048];
+int LastX=0,LastY=100;
 uint16_t LCD_BGR2RGB(uint16_t c)
 {
   uint16_t r,g,b,rgb;   
@@ -380,6 +383,35 @@ void LCD_OUTPUT_Float(uint16_t LineX, uint16_t LineY, char *string,float32_t str
   uint8_t tmp[64];
   sprintf((char*)tmp, "%s:%f",string, string_to_display);
 	Gui_DrawFont_GBK16(LineX, LineY, BLACK, RED, tmp);
+}
+void LCD_OUTPUT_Wave(void)
+{
+		User_AdcStartBlokingMode(Adc_table,2048);
+		for(uint16_t counter = 0;counter < 2048;counter ++)
+		{
+			if(counter<2040)
+			{
+			if(counter%6==0)
+			{
+				int temp;
+				temp=counter/6;
+				if((3.3*Adc_table[counter]/4095)<1.72)
+				Gui_DrawLine(LastX,LastY,temp,(107*(3.3*Adc_table[counter]/4095)-100) ,RED);
+				else
+				Gui_DrawLine(LastX,LastY,temp,(107*(3.3*Adc_table[counter]/4095)-100) ,RED);
+				LastX=temp;
+				LastY=(107*(3.3*Adc_table[counter]/4095)-100);
+			}
+			}
+			else
+			{
+				HAL_Delay(1000);
+				LastX=0;
+				LastY=100;
+				Lcd_Clear(WHITE);
+				
+			}
+		}
 }
 
 
