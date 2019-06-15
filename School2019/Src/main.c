@@ -75,7 +75,6 @@ int main(void)
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
-  int a=1;
 
   /* MCU Configuration--------------------------------------------------------*/
 
@@ -115,7 +114,7 @@ int main(void)
 		//LCD_Demo();
 		//printf("Hello LCD \r\n");
 		//HAL_Delay(1000);
-		 LCD_OUTPUT_Float(0,0,"Hello World!",a);
+		 
   }
   /* USER CODE END 3 */
 }

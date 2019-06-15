@@ -379,7 +379,7 @@ void LCD_OUTPUT_Float(uint16_t LineX, uint16_t LineY, char *string,float32_t str
 {
   uint8_t tmp[64];
   sprintf((char*)tmp, "%s:%f",string, string_to_display);
-	Gui_DrawFont_GBK16(LineX, LineY, BLACK, GRAY0, tmp);
+	Gui_DrawFont_GBK16(LineX, LineY, BLACK, RED, tmp);
 }
 
 

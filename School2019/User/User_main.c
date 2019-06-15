@@ -1,7 +1,7 @@
 #include "main.h"
 #include "spi.h"
 #include "gpio.h"
-
+#include "gui.h"
 
 #include "User_adc.h"
 #include "User_Uart.h"
@@ -20,7 +20,6 @@ void User_main(void)
 {
 	Systeminit();
 	HAL_Delay(500);
-	Lcd_Clear(RED);
 	while(1)
 	{
 		uint32_t time = HAL_GetTick();
@@ -28,9 +27,12 @@ void User_main(void)
 		time = HAL_GetTick() - time;
 		for(uint16_t counter = 0;counter < 2048;counter ++)
 		{
-			printf("%d\r\n",Adc_table[counter]);
+			//LCD_OUTPUT_Float(0,0,"Adc_table",3.3*Adc_table[counter]/4095);
+			if(counter%6==0)
+			Gui_DrawPoint(240-counter,240-240*(3.3*Adc_table[counter]/4095),RED);
+			//LCD_OUTPUT_Float(0,20,"time",time);
+			//HAL_Delay(100);
 		}
-		printf("%d\r\n",time);
 		while(1);
 	}
 	
