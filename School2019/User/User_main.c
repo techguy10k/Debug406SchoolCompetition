@@ -31,6 +31,7 @@ void User_main(void)
 			printf("%d\r\n",Adc_table[counter]);
 		}
 		printf("%d\r\n",time);
+		while(1);
 	}
 	
 }
