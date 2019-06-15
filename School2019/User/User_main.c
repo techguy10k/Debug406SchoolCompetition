@@ -12,7 +12,7 @@
 //TIM3 触发输出事件连接到ADC1 PA1端口控制采样速率 ADC1 PA1使用DMA2S0
 
 /* Test Only */
-
+float32_t FFT[2048] = {0};
 
 void Systeminit(void); //初始化都放这里
 
@@ -25,7 +25,13 @@ void User_main(void)
 	HAL_Delay(500);
 	while(1)
 	{
-		LCD_OUTPUT_Wave();
+		//LCD_OUTPUT_Wave();
+		User_FastRfft2048BlokingMode(FFT);
+		for(uint16_t counter = 0;counter < 1024; counter ++)
+		{
+			printf("%f\r\n",FFT[counter]);
+		}
+		while(1);
 	}
 	
 }
