@@ -337,9 +337,9 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>USE_HAL_DRIVER,STM32F407xx</Define>
+              <Define>USE_HAL_DRIVER,STM32F407xx,ARM_MATH_CM4</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;                      ../Drivers/STM32F4xx_HAL_Driver/Inc;                      ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;                      ../Drivers/CMSIS/Device/ST/STM32F4xx/Include;                      ../Drivers/CMSIS/Include;                      ..\User;                      ..\User\User_lib;                      ..\User</IncludePath>
+              <IncludePath>../Inc;                       ../Drivers/STM32F4xx_HAL_Driver/Inc;                       ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;                       ../Drivers/CMSIS/Device/ST/STM32F4xx/Include;                       ../Drivers/CMSIS/Include;                       ..\User;                       ..\User\User_lib;                       ..\User</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -394,6 +394,16 @@
           <GroupName>Application/User</GroupName>
           <Files>
             <File>
+              <FileName>gui.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\gui.c</FilePath>
+            </File>
+            <File>
+              <FileName>font.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\font.c</FilePath>
+            </File>
+            <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Src/main.c</FilePath>
@@ -437,16 +447,6 @@
               <FileName>stm32f4xx_hal_msp.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Src/stm32f4xx_hal_msp.c</FilePath>
-            </File>
-            <File>
-              <FileName>gui.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\User\gui.c</FilePath>
-            </File>
-            <File>
-              <FileName>font.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\User\font.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -5,7 +5,7 @@
 #include "User_adc.h"
 
 //ADC转换完成标志位 阻塞模式函数会使用该标志位
-static volatile uint8_t ADC_CompleteFlag = 0;
+//static volatile uint8_t ADC_CompleteFlag = 0;
 
 //初始化ADC 采样率应该在CubeMx配置
 void User_AdcInit(void)
@@ -22,10 +22,9 @@ void User_AdcStartBlokingMode(uint16_t* ArrayAddress,
 															uint16_t  Lenth
 														 )
 {
-	ADC_CompleteFlag = 0;
 	HAL_ADC_Start_DMA(&hadc1,(uint32_t*)ArrayAddress,Lenth);
-	HAL_Delay(1010);
-	ADC_CompleteFlag = 0;
+	HAL_Delay(1005);
+	User_AdcStop(); 
 }
 
 void User_AdcStop(void)
@@ -39,8 +38,8 @@ void User_AdcStop(void)
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)
 {
 	//判断 如果是ADC1
-	if(hadc->Instance == ADC1)
-	{
-		ADC_CompleteFlag = 1;
-	}
+//	if(hadc->Instance == ADC1)
+//	{
+//		ADC_CompleteFlag = 1;
+//	}
 }
