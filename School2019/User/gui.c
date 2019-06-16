@@ -10,7 +10,7 @@
 //返回值：RGB格式的颜色值
 uint16_t Adc_table[2048];
 float FFT_table[2048];
-int LastX_Wave=0,LastY_Wave=100;
+int LastX_Wave=0,LastY_Wave=15;
 int LastX_FFT=0,LastY_FFT=100;
 uint16_t LCD_BGR2RGB(uint16_t c)
 {
@@ -393,25 +393,24 @@ void LCD_OUTPUT_Wave(void)
 		User_AdcStartBlokingMode(Adc_table,2048);
 		for(uint16_t counter = 0;counter < 2048;counter ++)
 		{
+			//printf("%f\r\n",(109*(3.3*Adc_table[counter]/4095)-100));
 			if(counter<2040)
 			{
-			if(counter%6==0)
+			if(counter%12==0)
 			{
 				int temp;
 				temp=counter/6;
-				if((3.3*Adc_table[counter]/4095)<1.72)
-				Gui_DrawLine(LastX_Wave,LastY_Wave,temp,(107*(3.3*Adc_table[counter]/4095)-100) ,RED);
-				else
-				Gui_DrawLine(LastX_Wave,LastY_Wave,temp,(107*(3.3*Adc_table[counter]/4095)-100) ,RED);
+				Gui_DrawLine(LastX_Wave,LastY_Wave,temp,(int)(80*(3.3*Adc_table[counter]/4095)+15) ,RED);
 				LastX_Wave=temp;
-				LastY_Wave=(107*(3.3*Adc_table[counter]/4095)-100);
+				LastY_Wave=(80*(3.3*Adc_table[counter]/4095)+15);
+				HAL_Delay(10);
 			}
 			}
 			else
 			{
 				HAL_Delay(1000);
 				LastX_Wave=0;
-				LastY_Wave=100;
+				LastY_Wave=15;
 				Lcd_Clear(WHITE);
 				
 			}

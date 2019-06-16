@@ -20,13 +20,19 @@ void Systeminit(void); //初始化都放这里
 void User_main(void)
 {
 	int i=0;
+	float Adc_table[2048];
 	int LastX=0,LastY=100;
 	Systeminit();
 	HAL_Delay(500);
 	while(1)
 	{
-		LCD_OUTPUT_FFT();
-		LCD_OUTPUT_Float(0,0,"HELLO",i);
+//		User_FastRfft2048BlokingMode(Adc_table);
+//		for(uint16_t i=0;i<=1024;i++)
+//		{
+//			printf("%f\r\n",Adc_table[i]);
+//		}
+		OUTPUT_Fre();
+		LCD_OUTPUT_Wave();
 	}
 	
 }
