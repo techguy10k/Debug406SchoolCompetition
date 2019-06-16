@@ -3,7 +3,7 @@
 */
 
 #include "User_FFT.h"
-#include "User_adc.h"
+//i8#include "User_adc.h"
 #include "arm_math.h"
 
 /*

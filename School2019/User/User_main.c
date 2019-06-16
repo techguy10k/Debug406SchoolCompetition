@@ -22,6 +22,7 @@
 */
 
 /* Test Only */
+extern DACStatus_Typedef Dac_Status;
 
 void Systeminit(void); //初始化都放这里
 
@@ -32,10 +33,29 @@ void User_main(void)
   HAL_TIM_Base_Start(&htim6);
   HAL_DAC_Init(&hdac);
 	Dac_init();
+	Dac_Run();
   while(1)
     {
-			Dac_Run();
-			while(1);
+			if(HAL_GPIO_ReadPin(GPIOE,GPIO_PIN_3) == 0)
+			{
+				Dac_SetOutputFreq(Dac_Plot_Freq_Trai,Dac_Plot_Freq_Trai,&Dac_Status);
+			}
+			
+			if(HAL_GPIO_ReadPin(GPIOE,GPIO_PIN_4) == 0)
+			{
+				htim6.Init.Prescaler = htim6.Init.Prescaler + 10;
+				HAL_TIM_Base_Init(&htim6);
+				HAL_Delay(200);
+			}
+
+//			if(HAL_GPIO_ReadPin(GPIOA,GPIO_PIN_0) == 0)
+//			{
+//				htim6.Init.Prescaler = htim6.Init.Prescaler + 10;
+//				HAL_TIM_Base_Init(&htim6);
+//				HAL_Delay(200);
+//			}
+
+			
     }
 
 }

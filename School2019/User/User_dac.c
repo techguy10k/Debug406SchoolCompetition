@@ -3241,7 +3241,19 @@ static void dac_plot(int16_t* Addr,uint16_t Lenth,DACStatus_Typedef* Status)
 			Status->Dac_Plot_Counter ++;
 		}
 		return;
-	}	
+	}
+
+	//三角波Hz
+	if((Status->Dac_PlotFreq0 == Dac_Plot_Freq_Trai) && (Status->Dac_PlotFreq1 == Dac_Plot_Freq_Trai))
+	{
+		for(;Counter < Lenth;Counter ++)
+		{	
+			Addr[Counter] = 2048 + 5 * Table_TriangleWave_1000Hz[Status->Dac_Plot_Counter % 500];
+			Status->Dac_Plot_Counter ++;
+		}
+		return;
+	}
+	
 	
 	
 }

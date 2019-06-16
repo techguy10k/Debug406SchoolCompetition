@@ -33,6 +33,7 @@
 #define Dac_Plot_Freq_1792 9
 
 #define Dac_Plot_Freq_50 10
+#define Dac_Plot_Freq_Trai 11
 
 
 #define Dac_Plot_Freq_Null 255
