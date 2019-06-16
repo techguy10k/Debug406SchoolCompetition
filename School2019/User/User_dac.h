@@ -13,5 +13,58 @@
 #include "tim.h"
 #include "dac.h"
 
+#include "string.h"
+
+#define Dac_Status_Idle 0
+#define Dac_Status_Busy 1
+
+#define Dac_Plotting_Bank0 0
+#define Dac_Plotting_Bank1 1
+
+#define Dac_Plot_Freq_256  0
+#define Dac_Plot_Freq_448  1
+#define Dac_Plot_Freq_500  2
+#define Dac_Plot_Freq_640  3
+#define Dac_Plot_Freq_832  4
+#define Dac_Plot_Freq_1000 5
+#define Dac_Plot_Freq_1216 6
+#define Dac_Plot_Freq_1408 7
+#define Dac_Plot_Freq_1600 8
+#define Dac_Plot_Freq_1792 9
+
+#define Dac_Plot_Freq_50 10
+
+
+#define Dac_Plot_Freq_Null 255
+#define Dac_Plot_Mid_Position 254
+
+
+
+typedef struct 
+{
+	uint8_t  Dac_Status;
+	uint8_t  Dac_Plotting_Bank;
+	
+	int16_t  Dac_Plot_Bank0[250];
+	int16_t  Dac_Plot_Bank1[250];
+	
+	uint32_t Dac_Plot_Counter;
+	
+	uint8_t  Dac_PlotFreq0;
+	uint8_t  Dac_PlotFreq1;
+	
+}DACStatus_Typedef;
+
+
+
+
+void Dac_init(void);
+void Dac_Deinit(void);
+void Dac_Run(void);
+void Dac_Stop(void);
+
+void Dac_SetOutputFreq(uint8_t Freq0,uint8_t Freq1,DACStatus_Typedef* Status);
+
+
 
 #endif

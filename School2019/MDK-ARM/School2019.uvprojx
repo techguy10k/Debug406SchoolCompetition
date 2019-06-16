@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F407xx,ARM_MATH_CM4</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;                               ../Drivers/STM32F4xx_HAL_Driver/Inc;                               ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;                               ../Drivers/CMSIS/Device/ST/STM32F4xx/Include;                               ../Drivers/CMSIS/Include;                               ..\User;                               ..\User\User_lib;                               ..\User</IncludePath>
+              <IncludePath>../Inc;                                   ../Drivers/STM32F4xx_HAL_Driver/Inc;                                   ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;                                   ../Drivers/CMSIS/Device/ST/STM32F4xx/Include;                                   ../Drivers/CMSIS/Include;                                   ..\User;                                   ..\User\User_lib;                                   ..\User</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -394,11 +394,6 @@
           <GroupName>Application/User</GroupName>
           <Files>
             <File>
-              <FileName>gui.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\User\gui.c</FilePath>
-            </File>
-            <File>
               <FileName>font.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\font.c</FilePath>
@@ -427,11 +422,6 @@
               <FileName>dma.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Src/dma.c</FilePath>
-            </File>
-            <File>
-              <FileName>spi.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Src/spi.c</FilePath>
             </File>
             <File>
               <FileName>tim.c</FileName>
@@ -477,11 +467,6 @@
               <FileName>stm32f4xx_hal_dac_ex.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_hal_spi.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c</FilePath>
             </File>
             <File>
               <FileName>stm32f4xx_hal_tim.c</FileName>
@@ -597,6 +582,11 @@
               <FileName>User_FFT.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\User_Lib\User_FFT.c</FilePath>
+            </File>
+            <File>
+              <FileName>User_dac.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\User_dac.c</FilePath>
             </File>
           </Files>
         </Group>

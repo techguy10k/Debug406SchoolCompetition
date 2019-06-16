@@ -1,12 +1,11 @@
 #include "main.h"
-#include "spi.h"
 #include "gpio.h"
 #include "gui.h"
 
 #include "User_adc.h"
 #include "User_Uart.h"
 #include "User_FFT.h"
-#include "gui.h"
+#include "User_dac.h"
 
 #include "dac.h"
 
@@ -23,29 +22,6 @@
 */
 
 /* Test Only */
-uint16_t DACTable[20] =
-{
-  2087,
-  2121,
-  2149,
-  2167,
-  2173,
-  2167,
-  2149,
-  2121,
-  2087,
-  2048,
-  2009,
-  1975,
-  1947,
-  1929,
-  1923,
-  1929,
-  1947,
-  1975,
-  2009,
-  2048
-};
 
 void Systeminit(void); //初始化都放这里
 
@@ -55,9 +31,10 @@ void User_main(void)
   HAL_TIM_Base_Init(&htim6);
   HAL_TIM_Base_Start(&htim6);
   HAL_DAC_Init(&hdac);
+	Dac_init();
   while(1)
     {
-			HAL_DAC_Start_DMA(&hdac,DAC_CHANNEL_1,(uint32_t*)DACTable,20,DAC_ALIGN_12B_R);
+			Dac_Run();
 			while(1);
     }
 
